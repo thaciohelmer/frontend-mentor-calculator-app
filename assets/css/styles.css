@@ -1,0 +1,326 @@
+:root {
+    --bg-main: hsl(222, 26%, 31%);
+    --bg-toggle-keypad: hsl(223, 31%, 20%);
+    --bg-screen: hsl(224, 36%, 15%);
+
+    --bg-key: hsl(30, 25%, 89%);
+    --bg-key-shadow: hsl(28, 16%, 65%);
+    --bg-key-toggle-eq: hsl(6, 63%, 50%);
+    --bg-key-toggle-eq-shadow: hsl(6, 70%, 34%);
+    --bg-key-del-reset: hsl(225, 21%, 49%);
+    --bg-key-del-reset-shadow: hsl(224, 28%, 35%);
+
+    --text-nums-ops: hsl(221, 14%, 31%);
+    --text-others: hsl(0, 0%, 100%);
+
+    --font-family: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: color 0.4s ease;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1rem;
+    font-family: var(--font-family);
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-weight: 700;
+}
+
+body.theme-2 {
+    --bg-main: hsl(0, 0%, 90%);
+    --bg-toggle-keypad: hsl(0, 5%, 81%);
+    --bg-screen: hsl(0, 0%, 93%);
+
+    --bg-key: hsl(45, 7%, 89%);
+    --bg-key-shadow: hsl(35, 11%, 61%);
+    --bg-key-toggle-eq: hsl(25, 98%, 40%);
+    --bg-key-toggle-eq-shadow: hsl(25, 99%, 27%);
+    --bg-key-del-reset: hsl(185, 42%, 37%);
+    --bg-key-del-reset-shadow: hsl(185, 58%, 25%);
+
+    --text-nums-ops: hsl(60, 10%, 19%);
+    --text-others: hsl(0, 0%, 100%);
+}
+
+body.theme-3 {
+    --bg-main: hsl(268, 75%, 9%);
+    --bg-toggle-keypad: hsl(268, 71%, 12%);
+    --bg-screen: hsl(268, 71%, 12%);
+
+    --bg-key: hsl(268, 47%, 21%);
+    --bg-key-shadow: hsl(290, 70%, 36%);
+    --bg-key-toggle-eq: hsl(176, 100%, 44%);
+    --bg-key-toggle-eq-shadow: hsl(177, 92%, 70%);
+    --bg-key-del-reset: hsl(281, 89%, 26%);
+    --bg-key-del-reset-shadow: hsl(285, 91%, 52%);
+
+    --text-nums-ops: hsl(52, 100%, 62%);
+    --text-others: hsl(0, 0%, 100%);
+}
+
+.attribution {
+    position: fixed;
+    bottom: 2.4rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.2rem;
+    color: var(--text-others);
+    text-align: center;
+    font-weight: 400;
+}
+
+.attribution a {
+    color: var(--text-others);
+}
+
+.attribution a:visited {
+    color: var(--text-others);
+}
+
+body.theme-2 .attribution,
+body.theme-2 .attribution a {
+    color: var(--text-nums-ops);
+}
+
+.container {
+    background-color: var(--bg-main);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100dvh;
+}
+
+
+
+.calc .calc__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2.4rem;
+}
+
+.calc .calc__header .calc__title {
+    font-size: 2em;
+    color: var(--text-others);
+}
+
+body.theme-2 .calc .calc__header .calc__title {
+    color: var(--text-nums-ops);
+}
+
+body.theme-3 .calc .calc__header .calc__title {
+    color: var(--text-nums-ops);
+}
+
+.calc__theme-toggle {
+    display: flex;
+    align-items: end;
+    gap: 3.2rem;
+    cursor: pointer;
+}
+
+.calc__theme-toggle span {
+    text-transform: uppercase;
+    color: var(--text-others);
+}
+
+body.theme-2 .calc__theme-toggle span {
+    color: var(--text-nums-ops);
+}
+
+body.theme-3 .calc__theme-toggle span {
+    color: var(--text-nums-ops);
+}
+
+.calc__theme-toggle>span {
+    font-size: 1.2rem;
+    display: block;
+    padding: 0.4rem 0rem;
+}
+
+.calc__theme-toggle .calc__toggle-cur-theme {
+    width: 8.2rem;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 0.4rem;
+}
+
+.calc__theme-toggle .calc__toggle-cur-theme span {
+    font-size: 1.2rem;
+}
+
+.calc__theme-toggle .calc__toggle .calc__toggle-btn-container {
+    position: relative;
+    background-color: var(--bg-toggle-keypad);
+    padding: 0.6rem 0.6rem;
+    border-radius: 1.6rem;
+    height: 2.8rem;
+}
+
+.calc__theme-toggle .calc__toggle .calc__toggle-btn-container .calc__toggle-btn {
+    position: absolute;
+    display: block;
+    border-radius: 100%;
+    height: 1.6rem;
+    width: 1.6rem;
+    border: none;
+    background-color: var(--bg-key-toggle-eq);
+    cursor: pointer;
+    transition: all 0.4s ease;
+    left: 0%;
+    transform: translateX(50%);
+}
+
+.calc__theme-toggle .calc__toggle .calc__toggle-btn-container .calc__toggle-btn.theme-2 {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.calc__theme-toggle .calc__toggle .calc__toggle-btn-container .calc__toggle-btn.theme-3 {
+    left: 100%;
+    transform: translateX(calc(-100% - 0.8rem));
+}
+
+.calc .calc__display {
+    padding: 3.2rem;
+    background-color: var(--bg-screen);
+    border-radius: 1rem;
+    font-size: 4.6rem;
+    line-height: 1;
+    text-align: end;
+    color: var(--text-others);
+    margin-bottom: 2.4rem;
+}
+
+.calc .calc__display::-webkit-scrollbar {
+    height: 0;
+}
+
+body.theme-2 .calc .calc__display {
+    color: var(--text-nums-ops);
+}
+
+body.theme-3 .calc .calc__display {
+    color: var(--text-nums-ops);
+}
+
+.calc .calc__keyboard {
+    background-color: var(--bg-toggle-keypad);
+    border-radius: 1rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    padding: 3.2rem;
+}
+
+.calc .calc__keyboard .calc__keyboard-btn {
+    border: none;
+    background-color: var(--bg-key);
+    padding: 1.2rem 2.4rem;
+    border-radius: 1rem;
+    border-bottom: 0.4rem solid var(--bg-key-shadow);
+    font-size: 3.8rem;
+    color: var(--text-nums-ops);
+    font-family: var(--font-family);
+    text-transform: uppercase;
+    cursor: pointer;
+    text-align: center;
+    line-height: 1;
+    transition: all 0.3s ease;
+    user-select: none;
+    font-weight: 700;
+}
+
+body.theme-3 .calc .calc__keyboard .calc__keyboard-btn {
+    background-color: var();
+}
+
+.calc .calc__keyboard .calc__keyboard-btn:hover {
+    background-color: var(--text-others);
+}
+
+body.theme-3 .calc .calc__keyboard .calc__keyboard-btn:hover {
+    background-color: var(--bg-key-del-reset);
+    filter: brightness(2);
+}
+
+.calc .calc__keyboard .calc__keyboard-btn.calc__keyboard-btn--large {
+    grid-column: span 2;
+    font-size: 2.6rem;
+    padding: 1.8rem 2.4rem;
+}
+
+.calc .calc__keyboard .calc__keyboard-btn.calc__keyboard-btn--clear {
+    background-color: var(--bg-key-del-reset);
+    border-color: var(--bg-key-del-reset-shadow);
+    color: var(--text-others);
+}
+
+.calc .calc__keyboard .calc__keyboard-btn.calc__keyboard-btn--clear:hover {
+    filter: brightness(1.4);
+}
+
+.calc .calc__keyboard .calc__keyboard-btn.calc__keyboard-btn--toggle-eq {
+    background-color: var(--bg-key-toggle-eq);
+    border-color: var(--bg-key-toggle-eq-shadow);
+    color: var(--text-others);
+}
+
+body.theme-3 .calc .calc__keyboard .calc__keyboard-btn.calc__keyboard-btn--toggle-eq {
+    color: hsl(223, 31%, 20%);
+}
+
+.calc__toggle-btn.calc__keyboard-btn--toggle-eq:hover,
+.calc .calc__keyboard .calc__keyboard-btn.calc__keyboard-btn--toggle-eq:hover {
+    filter: brightness(1.4);
+}
+
+body.theme-3 .calc .calc__keyboard .calc__keyboard-btn.calc__keyboard-btn--toggle-eq:hover {
+    background-color: var(--bg-key-toggle-eq);
+}
+
+@media (max-width: 59em) {
+    html {
+        font-size: 50%;
+    }
+
+    .container {
+        padding: 0 4rem;
+    }
+
+    .calc .calc__keyboard {
+        gap: 1.4rem;
+    }
+
+    .calc .calc__keyboard .calc__keyboard-btn {
+        font-size: 3.2rem;
+        padding: 1.8rem 2.2rem;
+    }
+
+    .calc .calc__keyboard .calc__keyboard-btn.calc__keyboard-btn--large {
+        font-size: 2rem;
+    }
+
+    .calc .calc__keyboard .calc__keyboard-btn.calc__keyboard-btn--clear {
+        padding: 1.8rem 1.4rem;
+        font-size: 1.8rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 75em) {
+    html {
+        font-size: 56.25%;
+    }
+}

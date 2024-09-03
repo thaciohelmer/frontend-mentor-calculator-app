@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- displays site properly based on user's device -->
+
+  <meta name="description"
+    content="Solution for the Frontend Mentor Calculator App challenge by Thacio Helmer. This responsive calculator app supports basic math operations, theme customization, and saves user preferences. Built with HTML5, CSS Grid, Flexbox, and JavaScript. Explore the live site and learn more about the project." />
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
+
+  <link rel="stylesheet" href="./assets/css/styles.css" />
+  <link rel="stylesheet" href="./assets/css/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+
+  <title>Frontend Mentor | Calculator app</title>
+</head>
+
+<body class="theme-1">
+  <main class="container">
+    <div class="calc">
+      <div class="calc__header">
+        <h2 class="calc__title">calc</h2>
+        <div class="calc__theme-toggle">
+          <span>theme</span>
+          <div class="calc__toggle">
+            <div class="calc__toggle-cur-theme">
+              <span>1</span><span>2</span><span>3</span>
+            </div>
+            <div id="toggle-theme-btn" class="calc__toggle-btn-container">
+              <button class="calc__toggle-btn calc__keyboard-btn--toggle-eq" aria-label="Toggle Theme"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="calc__display">0</div>
+      <div class="calc__keyboard">
+        <button data-value="7" class="calc__keyboard-btn">7</button>
+        <button data-value="8" class="calc__keyboard-btn">8</button>
+        <button data-value="9" class="calc__keyboard-btn">9</button>
+        <button data-action="del" class="calc__keyboard-btn calc__keyboard-btn--clear">
+          del
+        </button>
+        <button data-value="4" class="calc__keyboard-btn">4</button>
+        <button data-value="5" class="calc__keyboard-btn">5</button>
+        <button data-value="6" class="calc__keyboard-btn">6</button>
+        <button data-operation="+" class="calc__keyboard-btn">+</button>
+        <button data-value="1" class="calc__keyboard-btn">1</button>
+        <button data-value="2" class="calc__keyboard-btn">2</button>
+        <button data-value="3" class="calc__keyboard-btn">3</button>
+        <button data-operation="-" class="calc__keyboard-btn">-</button>
+        <button data-value="." class="calc__keyboard-btn">.</button>
+        <button data-value="0" class="calc__keyboard-btn">0</button>
+        <button data-operation="/" class="calc__keyboard-btn">/</button>
+        <button data-operation="x" class="calc__keyboard-btn">x</button>
+        <button data-action="reset" class="calc__keyboard-btn calc__keyboard-btn--large calc__keyboard-btn--clear">
+          reset
+        </button>
+        <button data-operation="=" class="calc__keyboard-btn calc__keyboard-btn--large calc__keyboard-btn--toggle-eq">
+          =
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <script defer src="./assets/js/theme.js"></script>
+  <script defer src="./assets/js/calculator.js"></script>
+  <script defer src="./assets/js/script.js"></script>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io/challenges/calculator-app-9lteq5N29" target="_blank">Frontend
+      Mentor</a>.
+    Coded by <a href="https://thaciohelmer.com.br/">Thacio Helmer</a>.
+  </div>
+</body>
+
+</html>
